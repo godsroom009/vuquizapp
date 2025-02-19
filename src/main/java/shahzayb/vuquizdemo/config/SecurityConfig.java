@@ -32,12 +32,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(encoder());
+
+        auth.inMemoryAuthentication()
+                .withUser("admin")
+                .password(encoder().encode("admin"))
+                .roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests().antMatchers("/quiz/**").hasRole("STUDENT")
+                .authorizeRequests()
+                .antMatchers("/quiz/**").hasRole("STUDENT")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/", "/register").permitAll()
                 .and()
                 .formLogin()
