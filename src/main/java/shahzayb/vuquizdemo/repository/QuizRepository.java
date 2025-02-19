@@ -9,4 +9,8 @@ import java.util.List;
 
 public interface QuizRepository extends MongoRepository<Quiz, Long> {
     List<Quiz> getByUser(User user, Sort sort);
+
+    Quiz save(Quiz quiz);
+
+    void deleteById(Long id);
 }
