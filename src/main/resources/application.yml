@@ -11,3 +11,8 @@ server:
 spring:
   profiles:
     active: dev
+
+  data:
+    mongodb:
+      uri: mongodb+srv://test:test@cluster0.ic9r7.mongodb.net/vuquiz
+      database: vuquiz

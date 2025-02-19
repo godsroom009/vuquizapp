@@ -2,17 +2,19 @@ package shahzayb.vuquizdemo.entity;
 
 import lombok.*;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
 
-@Entity
+@Document
 @Getter
 @Setter
 public class Quiz {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Instant instant = Instant.now();
     private Integer result = 0;
@@ -24,12 +26,8 @@ public class Quiz {
     @Transient
     private List<Question> questions;
 
-    @ManyToOne
-    @JoinColumn(name = "user")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "subject")
     private Subject subject;
 
     public Quiz() {
