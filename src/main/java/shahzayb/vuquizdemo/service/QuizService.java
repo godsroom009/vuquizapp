@@ -65,4 +65,20 @@ public class QuizService {
     public List<Quiz> getQuizzesByUser(User user) {
         return quizRepository.getByUser(user, Sort.by("instant").descending());
     }
+
+    public void createQuiz(Quiz quiz) {
+        quizRepository.save(quiz);
+    }
+
+    public Quiz getQuizById(Long id) {
+        return quizRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Quiz not found"));
+    }
+
+    public void updateQuiz(Quiz quiz) {
+        quizRepository.save(quiz);
+    }
+
+    public void deleteQuiz(Long id) {
+        quizRepository.deleteById(id);
+    }
 }

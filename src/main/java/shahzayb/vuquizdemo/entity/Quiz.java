@@ -120,9 +120,7 @@ public class Quiz {
         return questions.get(curQuestionNumber - 1);
     }
 
-//    @PrePersist
-//    public void calculateTotalMarks() {
-//        totalMarks = questions.stream().mapToInt(Question::getTotalMarks).sum();
-//    }
-
+    public void calculateTotalMarks() {
+        totalMarks = questions.stream().mapToInt(Question::getTotalMarks).sum();
+    }
 }
