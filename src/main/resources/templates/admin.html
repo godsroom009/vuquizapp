@@ -10,10 +10,18 @@
     <title>Admin Page</title>
 </head>
 <body>
-<div class="content flexbox flexbox-center">
-    <div class="text-center">
-        <h1 class="heading">Admin Page</h1>
-        <h2 class="heading top-bottom-margin">Welcome to the Admin Page</h2>
+<div class="content flexbox">
+    <div class="left-drawer">
+        <ul>
+            <li><a th:href="@{/admin/users}">View Users</a></li>
+            <li><a th:href="@{/admin/users/add}">Add User</a></li>
+        </ul>
+    </div>
+    <div class="main-content flexbox flexbox-center">
+        <div class="text-center">
+            <h1 class="heading">Admin Page</h1>
+            <h2 class="heading top-bottom-margin">Welcome to the Admin Page</h2>
+        </div>
     </div>
 </div>
 <footer class="full-width">
