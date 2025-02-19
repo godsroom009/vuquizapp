@@ -2,20 +2,17 @@ package shahzayb.vuquizdemo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-
-@Entity
+@Document
 @Getter
 @Setter
 public class QuestionOption {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String questionOption;
 
-    @ManyToOne
-    @JoinColumn(name = "question")
     private Question question;
 
     public Long getId() {

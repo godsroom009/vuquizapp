@@ -1,8 +1,8 @@
 package shahzayb.vuquizdemo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import shahzayb.vuquizdemo.entity.Subject;
 
-public interface SubjectRepository extends JpaRepository<Subject, Long> {
+public interface SubjectRepository extends MongoRepository<Subject, Long> {
     Subject getSubjectBySubjectCode(String subjectCode);
 }
