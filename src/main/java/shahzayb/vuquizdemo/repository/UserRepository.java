@@ -1,8 +1,13 @@
 package shahzayb.vuquizdemo.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.Repository;
+
 import shahzayb.vuquizdemo.entity.User;
 
-public interface UserRepository extends MongoRepository<User, Long> {
+public interface UserRepository extends Repository<User, Long> {
     User findByUsername(String username);
+
+    void deleteAll();
+
+    void save(User user);
 }

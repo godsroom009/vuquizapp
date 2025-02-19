@@ -14,5 +14,5 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/vuquizapp
-      database: vuquizapp
+      uri: mongodb+srv://test:test@cluster0.ic9r7.mongodb.net/vuquiz
+      database: vuquiz

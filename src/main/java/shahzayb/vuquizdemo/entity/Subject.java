@@ -9,22 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @Document
 public class Subject {
+
     @Id
     private Long id;
     private String title;
     private String subjectCode;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getSubjectCode() {
-        return subjectCode;
-    }
 
     public Subject() {
     }
